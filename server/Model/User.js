@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 const  validator  = require('validator');
 // const bcrypt = require('bcrypt');
@@ -18,28 +17,24 @@ const userSchema = new mongoose.Schema({
         required: validator.isEmail['Please enter an email']
         // required:  [isEmail, 'Please enter an email']
     },
-  
+  currency:{
+        type: String
+    },
     country:{
         type: String
     },
-    postal:{
-        type:String,
-        default: "postal code"
-    },
-   address:{
-    type:String,
-    default:"your address"
-   },
-    city:{
-        type:String,
-        default: "your city"
+    gender:{
+        type: String
     },
     account:{
-        type: String,
-        default:"Basic"
+        type: String
     },
     password:{
         type: String,
+    },
+    session:{
+        type: String,
+        default:"0/0"
     },
 
     image:{
@@ -47,34 +42,24 @@ const userSchema = new mongoose.Schema({
     }, 
     balance:{
         type: String,
-        default: "$0.00"
+        default: "0.00"
     },
-    pending:{
+    available:{
         type: String,
-        default: "$0.00"
-    },
-    verifiedStatus:{
-        type: String,
-        default: 'Account not yet Verified!'
+        default: "0.00"
     },
     bonus:{
         type: String,
-        default: "$0.00"
+        default: "0.00"
     },
     widthdrawBalance:{
         type: String,
-        default: "$0.00"
+        default: "0.00"
     },
     profit:{
         type: String,
-        default: "$0.00"
+        default: "0.00"
     },
-
-    lastDeposit:{
-        type: String,
-        default: "$0.00"
-    },
-
     totalDeposit:{
         type: String,
         default: "0"
@@ -88,13 +73,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: 'Account not yet Verified!'
     },
-    Signal: {
+    livetrades: {
         type: [mongoose.Schema.Types.ObjectId],
-        ref: 'signal'
-    },
-    insurances: {
-        type: [mongoose.Schema.Types.ObjectId],
-        ref: 'insurance'
+        ref: 'livetrade'
     },
     upgrades: {
         type: [mongoose.Schema.Types.ObjectId],

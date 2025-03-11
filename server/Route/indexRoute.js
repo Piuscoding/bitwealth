@@ -11,15 +11,15 @@ router.get("/", homePage);
 router.get("/about", aboutPage);
 
 router.get("/register", registerPage);
-// router.post('/register',register_post);
+router.post('/register',register_post);
 
 router.get("/login", loginPage);
-// router.post('/login',login_post);
+router.post('/login',login_post);
 
 router.get('/loginAdminse', loginAdmin);
-// router.post('/loginAdminse', loginAdmin_post)
+router.post('/loginAdminse', loginAdmin_post)
 
-// router.get('/logout', logout_get)
+router.get('/logout', logout_get)
 
 
 

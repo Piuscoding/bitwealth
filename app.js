@@ -10,7 +10,8 @@ const { requireAuth, checkUser } = require('./server/authMiddleware/authMiddlewa
 const app = express();
 const PORT = 7000 || process.env.PORT;
 
-//middlewares
+//middlewar
+//es
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
